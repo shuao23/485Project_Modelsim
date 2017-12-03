@@ -75,7 +75,7 @@ begin
 
    and_alu : and_gate port map (mux_a_o, mux_b_o, and_o);
    or_alu : or_gate port map (mux_a_o, mux_b_o, or_o);
-   adder_alu : adder1 port map (a, b, carry_in, sum_o, carry_out);
+   adder_alu : adder1 port map (mux_a_o, mux_b_o, carry_in, sum_o, carry_out);
 
    mux_merge : mux4_1 port map (op, and_o, or_o, sum_o, less, o);
 
