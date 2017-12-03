@@ -26,19 +26,28 @@ architecture TB of TB_logic_gates is
       );
    end component or_gate;
 
-   signal X, Y, O_OR, O_AND : std_logic;
+   component not_gate is
+      port(
+         i : in std_logic;
+         o : out std_logic
+      );
+   end component not_gate;
+
+   signal X, Y, O_OR, O_AND, O_NOT : std_logic;
 
 begin
    and_gate_test : and_gate port map (X, Y, O_AND);
 	or_gate_test : or_gate port map (X, Y, O_OR);
+   not_gate_test : not_gate port map (X, O_NOT);
 
-   process 
+   process
    begin
       X <= '0';
       Y <= '0';
       wait for 10 ns;
       assert (O_OR = '0') report "OR 0, 0 is not 1" severity failure;
       assert (O_AND = '0') report "And 0, 0 is not 0" severity failure;
+      assert (O_NOT = '1') report "Not 0 is not 1" severity failure;
 
       X <= '0';
       Y <= '1';
@@ -51,6 +60,7 @@ begin
       wait for 10 ns;
       assert (O_OR = '1') report "OR 1, 0 is not 1" severity failure;
       assert (O_AND = '0') report "And 1, 0 is not 0" severity failure;
+      assert (O_NOT = '0') report "Not 1 is not 0" severity failure;
 
       X <= '1';
       Y <= '1';
