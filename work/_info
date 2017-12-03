@@ -1,0 +1,1072 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dc:/program files/Modeltech_pe_edu_10.4a/examples
+Ealu_control
+Z0 w1512260614
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project
+Z4 8C:\Users\shuao\Desktop\IIT\Senior\S1\ECE 485\Project\alu_control.vhd
+Z5 FC:\Users\shuao\Desktop\IIT\Senior\S1\ECE 485\Project\alu_control.vhd
+l0
+L4
+VDk`T<nA7PYahGIBmMLb6S3
+!s100 idU6XBfUDhIbK15Z6ENgL3
+Z6 OP;C;10.4a;61
+32
+Z7 !s110 1512261453
+!i10b 1
+Z8 !s108 1512261453.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\shuao\Desktop\IIT\Senior\S1\ECE 485\Project\alu_control.vhd|
+Z10 !s107 C:\Users\shuao\Desktop\IIT\Senior\S1\ECE 485\Project\alu_control.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
+Abehav
+R1
+R2
+DEx4 work 11 alu_control 0 22 Dk`T<nA7PYahGIBmMLb6S3
+l21
+L14
+V_LBXSz1_7F?8PYIkFN9653
+!s100 Q2b<PNQ>lKF[L6dZ:1Qo@2
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eand_gate
+Z13 w1512191262
+Z14 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R1
+R2
+R3
+Z15 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/and_gate.vhd
+Z16 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/and_gate.vhd
+l0
+L8
+V_7>I`4PmN5M@QG9laaXh01
+!s100 QJz0ofPX3_3b0f0Ong=G_0
+R6
+32
+Z17 !s110 1512261451
+!i10b 1
+Z18 !s108 1512261451.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/and_gate.vhd|
+Z20 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/and_gate.vhd|
+!i113 1
+R11
+R12
+Abehav
+R14
+R1
+R2
+DEx4 work 8 and_gate 0 22 _7>I`4PmN5M@QG9laaXh01
+l16
+L15
+Vd98cdMOlz3<W`7ofVA]8d0
+!s100 c2nF8V>MmY`mn27ER[aB72
+R6
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R11
+R12
+Ebitextend16_32
+Z21 w1512250335
+R14
+R1
+R2
+R3
+Z22 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/bitextend16_32.vhd
+Z23 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/bitextend16_32.vhd
+l0
+L5
+Vok6gW88X1K1n9;_=cK3?71
+!s100 X6PAUNSEzD[E:V??HC]NR2
+R6
+32
+R7
+!i10b 1
+R8
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/bitextend16_32.vhd|
+Z25 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/bitextend16_32.vhd|
+!i113 1
+R11
+R12
+Abehav
+R14
+R1
+R2
+DEx4 work 14 bitextend16_32 0 22 ok6gW88X1K1n9;_=cK3?71
+l13
+L12
+V_I<;KSjRC1o:;@F1SCQR=0
+!s100 78jdIWefgZE>KB<DEi31g3
+R6
+32
+R7
+!i10b 1
+R8
+R24
+R25
+!i113 1
+R11
+R12
+Econtrol_logic
+Z26 w1512254521
+R1
+R2
+R3
+Z27 8C:\Users\shuao\Desktop\IIT\Senior\S1\ECE 485\Project\control_logic.vhd
+Z28 FC:\Users\shuao\Desktop\IIT\Senior\S1\ECE 485\Project\control_logic.vhd
+l0
+L4
+VM@Gd9EEZQI_Z2<A?RAL560
+!s100 amh7g6ZO5KD?6[5a3[EZ73
+R6
+32
+R7
+!i10b 1
+R8
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\shuao\Desktop\IIT\Senior\S1\ECE 485\Project\control_logic.vhd|
+Z30 !s107 C:\Users\shuao\Desktop\IIT\Senior\S1\ECE 485\Project\control_logic.vhd|
+!i113 1
+R11
+R12
+Abehav
+R1
+R2
+Z31 DEx4 work 13 control_logic 0 22 M@Gd9EEZQI_Z2<A?RAL560
+l41
+L24
+V]^MCde7@88GYR`G[V;[1T0
+!s100 P@bfnj9M>i2dTPB>echmn0
+R6
+32
+R7
+!i10b 1
+R8
+R29
+R30
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+R31
+l41
+L24
+V_2mKb4H<XA=;n;hkb:EWz2
+!s100 IBQFaIdLn3NXM<lO9on_P2
+R6
+32
+!s110 1512250495
+!i10b 1
+!s108 1512250495.000000
+R29
+R30
+!i113 1
+R11
+R12
+w1512248765
+Econtrol_logic_2
+Z32 w1512246899
+R1
+R2
+R3
+Z33 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/Control_Logic_2.vhd
+Z34 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/Control_Logic_2.vhd
+l0
+L4
+VcYnaVJ@gMz71dHk3em>7J1
+!s100 1G9`=R7i4GfEXlKM`@Rbb2
+R6
+32
+Z35 !s110 1512248058
+!i10b 1
+Z36 !s108 1512248058.000000
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/Control_Logic_2.vhd|
+Z38 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/Control_Logic_2.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+DEx4 work 15 control_logic_2 0 22 cYnaVJ@gMz71dHk3em>7J1
+l41
+L24
+Ve_IUbT`^W6ob?9[_l;;Sk3
+!s100 ^B43g23IDVB6V@5SI;WO51
+R6
+32
+R35
+!i10b 1
+R36
+R37
+R38
+!i113 1
+R11
+R12
+Edecoder_32
+Z39 w1512170387
+R14
+R1
+R2
+R3
+Z40 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/decoder_32.vhd
+Z41 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/decoder_32.vhd
+l0
+L8
+VKUh5fIZ9JB@9Uh^od4nK:2
+!s100 ?[:ZTzE_6:R4WK_`M?hj<3
+R6
+32
+Z42 !s110 1512261452
+!i10b 1
+Z43 !s108 1512261452.000000
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/decoder_32.vhd|
+Z45 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/decoder_32.vhd|
+!i113 1
+R11
+R12
+Abehav
+R14
+R1
+R2
+DEx4 work 10 decoder_32 0 22 KUh5fIZ9JB@9Uh^od4nK:2
+l17
+L15
+VMOgJLRkAVANMVMF<fVnc`0
+!s100 Pi^AcC2C:c;LYzFVASWm]2
+R6
+32
+R42
+!i10b 1
+R43
+R44
+R45
+!i113 1
+R11
+R12
+Ememory32
+Z46 w1512243184
+R14
+R1
+R2
+R3
+Z47 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/memory32.vhd
+Z48 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/memory32.vhd
+l0
+L8
+VGSPSkY^Lj5SO?77Me@nXP1
+!s100 9NABf8=50<_ODDFfUo8]a1
+R6
+32
+R7
+!i10b 1
+R8
+Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/memory32.vhd|
+Z50 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/memory32.vhd|
+!i113 1
+R11
+R12
+Abehav
+R14
+R1
+R2
+DEx4 work 8 memory32 0 22 GSPSkY^Lj5SO?77Me@nXP1
+l23
+L17
+VZ7T_<Rf5W8b?BcfP_7eX_3
+!s100 U;hN<Yn1N65O8e83dmefU2
+R6
+32
+R7
+!i10b 1
+R8
+R49
+R50
+!i113 1
+R11
+R12
+Emux2_32
+Z51 w1512193638
+R14
+R1
+R2
+R3
+Z52 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux2_32.vhd
+Z53 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux2_32.vhd
+l0
+L8
+V941`S576IzJeYb^]4jDU=2
+!s100 1oGiBJDeHPc=>>8OGZ_[k0
+R6
+32
+R42
+!i10b 1
+R43
+Z54 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux2_32.vhd|
+Z55 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux2_32.vhd|
+!i113 1
+R11
+R12
+Abehav
+R14
+R1
+R2
+DEx4 work 7 mux2_32 0 22 941`S576IzJeYb^]4jDU=2
+l18
+L16
+VYEc;RW`>fO^Jo_E:?D3b:2
+!s100 De>1VdPb2nSJ_Ul[aU>YV3
+R6
+32
+R42
+!i10b 1
+R43
+R54
+R55
+!i113 1
+R11
+R12
+Emux32_32
+Z56 w1512164443
+R14
+R1
+R2
+R3
+Z57 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux32_32.vhd
+Z58 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux32_32.vhd
+l0
+L8
+VT2?2EF4Koz=O1AnM5ho;Y0
+!s100 zP2FL]j6I@hOkkgdb]N=20
+R6
+32
+R42
+!i10b 1
+R43
+Z59 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux32_32.vhd|
+Z60 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux32_32.vhd|
+!i113 1
+R11
+R12
+Abehav
+R14
+R1
+R2
+DEx4 work 8 mux32_32 0 22 T2?2EF4Koz=O1AnM5ho;Y0
+l46
+L22
+Vnb^ifIQz^UhEK_IU>bG9n3
+!s100 gXo@@kXaPgWNGmA<K^D163
+R6
+32
+R42
+!i10b 1
+R43
+R59
+R60
+!i113 1
+R11
+R12
+Emux4_32
+Z61 w1512193637
+R14
+R1
+R2
+R3
+Z62 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux4_32.vhd
+Z63 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux4_32.vhd
+l0
+L8
+VTmVA26M;VQJU^8K4ZiYP01
+!s100 ;1n^Gk3nJcNZ^jNJGfHio3
+R6
+32
+R42
+!i10b 1
+R43
+Z64 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux4_32.vhd|
+Z65 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux4_32.vhd|
+!i113 1
+R11
+R12
+Abehav
+R14
+R1
+R2
+DEx4 work 7 mux4_32 0 22 TmVA26M;VQJU^8K4ZiYP01
+l18
+L16
+VH?z:AfghzJF0X9`?1DN`H3
+!s100 ^P80^NSJezRb^X>F3<mM80
+R6
+32
+R42
+!i10b 1
+R43
+R64
+R65
+!i113 1
+R11
+R12
+Emux8_32
+Z66 w1512163596
+R14
+R1
+R2
+R3
+Z67 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux8_32.vhd
+Z68 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux8_32.vhd
+l0
+L8
+Vz94W8DQ<ZK17USO2Q[>7?3
+!s100 @fZ31WLDIa:GbLMGI5=`E3
+R6
+32
+R42
+!i10b 1
+R43
+Z69 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux8_32.vhd|
+Z70 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/mux8_32.vhd|
+!i113 1
+R11
+R12
+Abehav
+R14
+R1
+R2
+DEx4 work 7 mux8_32 0 22 z94W8DQ<ZK17USO2Q[>7?3
+l38
+L17
+V=h>>80ZQWaS=ea]co0CEM0
+!s100 PlHO>M9zS514]B9Y3`[YF3
+R6
+32
+R42
+!i10b 1
+R43
+R69
+R70
+!i113 1
+R11
+R12
+Eor_gate
+Z71 w1512104596
+R14
+R1
+R2
+R3
+Z72 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/or_gate.vhd
+Z73 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/or_gate.vhd
+l0
+L8
+V0UQ2>Q6Wl8hgXY`?R0<QB0
+!s100 iE8jHV[Xm51hEifWNf1222
+R6
+32
+R42
+!i10b 1
+R18
+Z74 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/or_gate.vhd|
+Z75 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/or_gate.vhd|
+!i113 1
+R11
+R12
+Abehav
+R14
+R1
+R2
+DEx4 work 7 or_gate 0 22 0UQ2>Q6Wl8hgXY`?R0<QB0
+l16
+L15
+VeI<BRF4i9125nH_]ZXUEG1
+!s100 XXd5@MdfQXVfN@DbR>HQC0
+R6
+32
+R42
+!i10b 1
+R18
+R74
+R75
+!i113 1
+R11
+R12
+Ereg32
+Z76 w1512190959
+R14
+R1
+R2
+R3
+Z77 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/reg32.vhd
+Z78 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/reg32.vhd
+l0
+L8
+V_1>YE@0i5mQ6g4^g1GCbK2
+!s100 0f`kSAAVaJU53_N^@i^@j1
+R6
+32
+R42
+!i10b 1
+R43
+Z79 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/reg32.vhd|
+Z80 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/reg32.vhd|
+!i113 1
+R11
+R12
+Abehav
+R14
+R1
+R2
+DEx4 work 5 reg32 0 22 _1>YE@0i5mQ6g4^g1GCbK2
+l20
+L16
+V0R>1blF3iS5Vc`2Bb9Yif3
+!s100 2YBO]eRzG3f`H:UGF:@WF2
+R6
+32
+R42
+!i10b 1
+R43
+R79
+R80
+!i113 1
+R11
+R12
+Eregisters_32
+Z81 w1512195333
+R14
+R1
+R2
+R3
+Z82 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/registers_32.vhd
+Z83 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/registers_32.vhd
+l0
+L8
+VlhK85DZ[]@I=jInN6Xm=e0
+!s100 SaNGE[IKE47aXT^A1ZNzo3
+R6
+32
+R42
+!i10b 1
+R43
+Z84 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/registers_32.vhd|
+Z85 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/registers_32.vhd|
+!i113 1
+R11
+R12
+Abehav
+R14
+R1
+R2
+DEx4 work 12 registers_32 0 22 lhK85DZ[]@I=jInN6Xm=e0
+l62
+L17
+V[c5Q>Ado<^[Oo_YPZ]g@b0
+!s100 5=LTDlSB0K2jzc59MaQb_0
+R6
+32
+R42
+!i10b 1
+R43
+R84
+R85
+!i113 1
+R11
+R12
+Esll2_32
+Z86 w1512244948
+R14
+R1
+R2
+R3
+Z87 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/sll2_32.vhd
+Z88 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/sll2_32.vhd
+l0
+L8
+V^LWi1NJhDR<LM4EfFkQFm0
+!s100 PJ??cHHWP`hnWNlCc^9U10
+R6
+32
+R7
+!i10b 1
+R8
+Z89 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/sll2_32.vhd|
+Z90 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/sll2_32.vhd|
+!i113 1
+R11
+R12
+Abehav
+R14
+R1
+R2
+DEx4 work 7 sll2_32 0 22 ^LWi1NJhDR<LM4EfFkQFm0
+l16
+L15
+Vg63:0IO4>MDRNE_951Kfz0
+!s100 9C:7R?GE9RY8ZZ6iR;AYc2
+R6
+32
+R7
+!i10b 1
+R8
+R89
+R90
+!i113 1
+R11
+R12
+Etb_alu_control
+Z91 w1512261480
+Z92 DPx3 std 3 env 0 22 d?`1ck@NdeD@H3RZG7FgZ2
+R14
+R1
+R2
+R3
+Z93 8C:\Users\shuao\Desktop\IIT\Senior\S1\ECE 485\Project\TEST_alu_control.vhd
+Z94 FC:\Users\shuao\Desktop\IIT\Senior\S1\ECE 485\Project\TEST_alu_control.vhd
+l0
+L8
+V3I;d@3jXQKkX]dlM>`D2e0
+!s100 [OGjWRQLFacS2bLaHHMIa1
+R6
+32
+Z95 !s110 1512261483
+!i10b 1
+Z96 !s108 1512261483.000000
+Z97 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\shuao\Desktop\IIT\Senior\S1\ECE 485\Project\TEST_alu_control.vhd|
+Z98 !s107 C:\Users\shuao\Desktop\IIT\Senior\S1\ECE 485\Project\TEST_alu_control.vhd|
+!i113 1
+R11
+R12
+Atb
+R92
+R14
+R1
+R2
+Z99 DEx4 work 14 tb_alu_control 0 22 3I;d@3jXQKkX]dlM>`D2e0
+l29
+L12
+VdML1CXJi3Bi`fA?S3Qe391
+!s100 4oOLLCV9giS_8m1DoIz^W3
+R6
+32
+R95
+!i10b 1
+R96
+R97
+R98
+!i113 1
+R11
+R12
+Etb_bitextend16_32
+Z100 w1512250483
+R92
+R14
+R1
+R2
+R3
+Z101 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_bitextend16_32.vhd
+Z102 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_bitextend16_32.vhd
+l0
+L10
+VVShd4XU4R5i0`hV:0H>ce3
+!s100 J_L:nmAYeK1Gk3Q^>T2oL1
+R6
+32
+R7
+!i10b 1
+R8
+Z103 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_bitextend16_32.vhd|
+Z104 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_bitextend16_32.vhd|
+!i113 1
+R11
+R12
+Abehav
+R92
+R14
+R1
+R2
+DEx4 work 17 tb_bitextend16_32 0 22 VShd4XU4R5i0`hV:0H>ce3
+l25
+L13
+VCf4<CB6dAN5gS_Tmzh23k0
+!s100 0Fgk^W<U5ziCDYzlmAKbS3
+R6
+32
+R7
+!i10b 1
+R8
+R103
+R104
+!i113 1
+R11
+R12
+Etb_control_logic
+Z105 w1512249258
+R92
+R14
+R1
+R2
+R3
+Z106 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_control_logic.vhd
+Z107 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_control_logic.vhd
+l0
+L8
+VQ>Yf7_3O99i19Q:Azm^X`3
+!s100 I`WCFhc^oR8fn_b53DAX>3
+R6
+32
+R7
+!i10b 1
+R8
+Z108 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_control_logic.vhd|
+Z109 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_control_logic.vhd|
+!i113 1
+R11
+R12
+Atb
+R92
+R14
+R1
+R2
+DEx4 work 16 tb_control_logic 0 22 Q>Yf7_3O99i19Q:Azm^X`3
+l56
+L12
+V2C2L?>00^L^KG;8P[AXg>0
+!s100 QhMPA3C4?lZYP7b`@AUb_0
+R6
+32
+R7
+!i10b 1
+R8
+R108
+R109
+!i113 1
+R11
+R12
+Etb_decoders
+Z110 w1512184732
+R92
+Z111 DPx4 ieee 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
+R14
+R1
+R2
+R3
+Z112 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_decoders.vhd
+Z113 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_decoders.vhd
+l0
+L11
+V6WU8A;4WQ0oC;^OGK0faQ3
+!s100 [=5U5ZVQM5@Rf]OaQ:e7F1
+R6
+32
+R42
+!i10b 1
+R43
+Z114 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_decoders.vhd|
+Z115 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_decoders.vhd|
+!i113 1
+R11
+R12
+Atb
+R92
+R111
+R14
+R1
+R2
+DEx4 work 11 tb_decoders 0 22 6WU8A;4WQ0oC;^OGK0faQ3
+l30
+L14
+VnWSW3YaOfH1FWkeWBNjlU2
+!s100 bL8FXe34fcSK:A]:__CeU2
+R6
+32
+R42
+!i10b 1
+R43
+R114
+R115
+!i113 1
+R11
+R12
+Etb_logic_gates
+Z116 w1512184889
+R92
+R14
+R1
+R2
+R3
+Z117 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_logic_gates.vhd
+Z118 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_logic_gates.vhd
+l0
+L10
+V3meDDjYhU3nNgKPAJ_Xki0
+!s100 zGnV>jWJ_BdZFo`DVIY>Y2
+R6
+32
+R17
+!i10b 1
+R18
+Z119 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_logic_gates.vhd|
+Z120 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_logic_gates.vhd|
+!i113 1
+R11
+R12
+Atb
+R92
+R14
+R1
+R2
+DEx4 work 14 tb_logic_gates 0 22 3meDDjYhU3nNgKPAJ_Xki0
+l31
+L13
+V50cK]MY1i;U_PDTc>OfW_1
+!s100 z:WGnI?9:NO0aKgGh?=?X2
+R6
+32
+R17
+!i10b 1
+R18
+R119
+R120
+!i113 1
+R11
+R12
+Etb_memory32
+Z121 w1512243556
+R92
+Z122 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+R14
+R1
+R2
+R3
+Z123 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_memory32.vhd
+Z124 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_memory32.vhd
+l0
+L12
+VJ8jIQ?2g<nGjC;Ph5?Pfa0
+!s100 @F80]GU`78VFF3JkcVCAN3
+R6
+32
+R7
+!i10b 1
+R8
+Z125 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_memory32.vhd|
+Z126 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_memory32.vhd|
+!i113 1
+R11
+R12
+Atb
+R92
+R122
+R14
+R1
+R2
+DEx4 work 11 tb_memory32 0 22 J8jIQ?2g<nGjC;Ph5?Pfa0
+l34
+L15
+Vj8`GbX2ELV`?WFkeR3`e80
+!s100 4NXg>o6FaBinTTB_;L]JB2
+R6
+32
+R7
+!i10b 1
+R8
+R125
+R126
+!i113 1
+R11
+R12
+Etb_muxes
+Z127 w1512181434
+R92
+R14
+R1
+R2
+R3
+Z128 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_muxes.vhd
+Z129 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_muxes.vhd
+l0
+L12
+V<GCZSjNl^n73hQH2d9>jj2
+!s100 4D769^L2cAJAde1_T3zOc1
+R6
+32
+R42
+!i10b 1
+R43
+Z130 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_muxes.vhd|
+Z131 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_muxes.vhd|
+!i113 1
+R11
+R12
+Atb
+R92
+R14
+R1
+R2
+DEx4 work 8 tb_muxes 0 22 <GCZSjNl^n73hQH2d9>jj2
+l70
+L15
+VPJj>8>6eWK<@6[`LJB`501
+!s100 JWU9lE@=679QnK^h2hVfa2
+R6
+32
+R42
+!i10b 1
+R43
+R130
+R131
+!i113 1
+R11
+R12
+Etb_reg32
+Z132 w1512184902
+R92
+R14
+R1
+R2
+R3
+Z133 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_reg32.vhd
+Z134 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_reg32.vhd
+l0
+L10
+VOno<`c6nPJnhN3SP?UDeB2
+!s100 MTjJBPU_4a5n17[[g7]JO1
+R6
+32
+R42
+!i10b 1
+R43
+Z135 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_reg32.vhd|
+Z136 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_reg32.vhd|
+!i113 1
+R11
+R12
+Atb
+R92
+R14
+R1
+R2
+DEx4 work 8 tb_reg32 0 22 Ono<`c6nPJnhN3SP?UDeB2
+l25
+L13
+VLz>R7dVMzPC>;nAQoSN820
+!s100 ihd?1MK[gAIk=4FiLVUmE1
+R6
+32
+R42
+!i10b 1
+R43
+R135
+R136
+!i113 1
+R11
+R12
+Etb_registers_32
+Z137 w1512195217
+R92
+R14
+R1
+R2
+R3
+Z138 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_registers_32.vhd
+Z139 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_registers_32.vhd
+l0
+L10
+V_>3YP;OW0_N<0P>UP`FMM1
+!s100 WoD0lOO=BUInQaIWM3LH50
+R6
+32
+R42
+!i10b 1
+R43
+Z140 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_registers_32.vhd|
+Z141 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_registers_32.vhd|
+!i113 1
+R11
+R12
+Atb
+R92
+R14
+R1
+R2
+DEx4 work 15 tb_registers_32 0 22 _>3YP;OW0_N<0P>UP`FMM1
+l32
+L13
+V?:o_M8EWJVNlllZMz3fHC1
+!s100 <4F<EE`85dLo=RV9f4gf40
+R6
+32
+R42
+!i10b 1
+R43
+R140
+R141
+!i113 1
+R11
+R12
+Etb_shifters
+Z142 w1512249505
+R92
+R14
+R1
+R2
+R3
+Z143 8C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_shifters.vhd
+Z144 FC:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_shifters.vhd
+l0
+L10
+V]f9MTmXR0I1R4Wl66hA5k1
+!s100 <^znHHW_kDAIAJzDod1aj2
+R6
+32
+R7
+!i10b 1
+R8
+Z145 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_shifters.vhd|
+Z146 !s107 C:/Users/shuao/Desktop/IIT/Senior/S1/ECE 485/Project/TEST_shifters.vhd|
+!i113 1
+R11
+R12
+Abehav
+R92
+R14
+R1
+R2
+DEx4 work 11 tb_shifters 0 22 ]f9MTmXR0I1R4Wl66hA5k1
+l24
+L13
+VV`AKTJO_ND2<e^:2eDPQT3
+!s100 @Qg0;P9i0Ncob?`Ph1]J:1
+R6
+32
+R7
+!i10b 1
+R8
+R145
+R146
+!i113 1
+R11
+R12

@@ -1,0 +1,53 @@
+------------------------------------------------
+--32 Bit register
+------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity registers_32 is
+   port(
+      clk : in std_logic;
+      rdr1, rdr2, wrr, wrd : in std_logic_vector (31 downto 0);
+      rdd1, rdd2 : out std_logic_vector (31 downto 0)
+   );
+end entity registers_32;
+
+architecture behav of registers_32 is
+
+   component reg32 is
+      port(
+         clk : in std_logic;
+         D : in std_logic_vector (31 downto 0);
+         Q : out std_logic_vector (31 downto 0)
+      );
+   end component reg32;
+
+   component and_gate is
+      port(
+         x, y : in std_logic;
+         o : out std_logic
+      );
+   end component and_gate;
+
+   type std_logic_arr32 is array (0 to 31) of std_logic;
+   type std_logic_vector_arr32 is array (0 to 31) of std_logic_vector (31 downto 0);
+
+   signal CLK : std_logic := 0;
+   signal SEL_AR : std_logic_arr32 := (others => 0); --Connected from decoder
+   signal C_AR : std_logic_arr32 := (others => 0); --Connected to clk of each registers
+   signal Q_AR : std_logic_vector_arr32 := ((others => (others => 0)));
+
+begin
+   RegArr32 : for i in 0 to 31 generate
+   begin
+      reg_x : reg32 port map (C_AR(i) ,wrd, Q_AR(i));
+   end generate RegArr32;
+
+   AndArr32 : for i in 0 to 31 generate
+   begin
+      and_x : and_gate port map (clk, SEL_AR(i), C_AR(i));
+   end generate AndArr32;
+
+
+end architecture;

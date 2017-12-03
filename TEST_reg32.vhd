@@ -1,0 +1,49 @@
+------------------------------------------------
+--Tests for 32 bit register
+------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library std;
+use std.env.all;
+
+entity TB_reg32 is
+end entity TB_reg32;
+
+architecture TB of TB_reg32 is
+   component reg32 is
+      port(
+         clk : in std_logic;
+         D : in std_logic_vector (31 downto 0);
+         Q : out std_logic_vector (31 downto 0)
+      );
+   end component reg32;
+
+   signal CLK : std_logic := '0';
+   signal D, Q : std_logic_vector (31 downto 0);
+
+   begin
+      reg32_test : reg32 port map (CLK, D, Q);
+
+      process
+      begin
+         wait for 10 ns;
+         assert (Q = x"00000000") report "Register not initialized properly" severity warning;
+
+         D <= x"00000001";
+         CLK <= '1';
+
+         wait for 10 ns;
+         assert (Q = x"00000001") report "Register did not read 0x00000001" severity failure;
+
+         CLK <= '0';
+         wait for 10 ns;
+         D <= x"FF00FF00";
+         CLK <= '1';
+
+         wait for 10 ns;
+         assert (Q = x"FF00FF00") report "Register did not read 0xFF00FF00" severity failure;
+
+         stop(0);
+      end process;
+end architecture TB;

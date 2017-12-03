@@ -1,0 +1,18 @@
+------------------------------------------------
+--Or Gate
+------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity or_gate is
+   port(
+      x2, y2 : in std_logic;
+      o2 : out std_logic
+   );
+end entity or_gate;
+
+architecture behav2 of or_gate is
+begin
+   o2 <= x2 or y2;
+end behav2;

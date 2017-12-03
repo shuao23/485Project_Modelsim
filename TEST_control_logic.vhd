@@ -1,0 +1,97 @@
+library ieee;
+	use ieee.std_logic_1164.all;
+	use ieee.numeric_std.all;
+library std;
+	use std.env.all;
+
+--entity declaration
+entity TB_control_logic is
+end TB_control_logic;
+
+--architecture declaration
+architecture TB of TB_control_logic is
+	--component declaration: Unit Under Test (UUT)/Design Under Test (DUT)
+	component control_logic
+	port
+	(
+		opcode 		: in  std_logic_vector(5 downto 0);
+		clk	 		: in  std_logic;
+		state_in		: in std_logic_vector(3 downto 0);
+		state_out	: out std_logic_vector(3 downto 0);
+		AluSrcB		: out std_logic_vector(1 downto 0);
+		AluOP			: out std_logic_vector(1 downto 0);
+		PCWrite 		: out std_logic_vector(1 downto 0);
+		PCWriteCond : out std_logic_vector(1 downto 0);
+		AluSrcA 		: out std_logic;
+		lorD 			: out std_logic;
+		memRead 		: out std_logic;
+		memWrite 	: out std_logic;
+		MemtoReg		: out std_logic;
+		RegDst 		: out std_logic
+	);
+	end component;
+
+		-- declare inputs of components and initialize
+		signal opcode			: std_logic_vector(5 downto 0) := "000000";
+
+
+		-- declare outputs of components
+		signal AluSrcB			: std_logic_vector(1 downto 0);
+		signal AluOP			: std_logic_vector(1 downto 0);
+		signal PCWrite 		: std_logic_vector(1 downto 0);
+		signal PCWriteCond 	: std_logic_vector(1 downto 0);
+		signal state_in		: std_logic_vector(3 downto 0);
+		signal state_out		: std_logic_vector(3 downto 0);
+		signal AluSrcA 		: std_logic;
+		signal lorD 			: std_logic;
+		signal memRead 		: std_logic;
+		signal memWrite 		: std_logic;
+		signal MemtoReg		: std_logic;
+		signal RegDst 			: std_logic;
+
+		-- define clock period
+		constant clk_period	: time := 200 ns;
+		signal clk				: std_logic := '0';
+
+begin
+	dut : control_logic port map
+	(
+		opcode		=> opcode,
+		state_in		=> state_in,
+		state_out	=> state_out,
+		AluSrcB		=> AluSrcB,
+		AluOP			=> AluOP,
+		PCWrite		=> PCWrite,
+		PCWriteCond => PCWriteCond,
+		AluSrcA		=> AluSrcA,
+		lorD			=> lorD,
+		memRead		=> memRead,
+		memWrite		=> memWrite,
+		MemtoReg		=> MemtoReg,
+		clk			=> clk,
+		RegDst		=> RegDst
+	);
+
+	--Clock generation
+	clk_process : process
+	begin
+		clk <= '0';
+		wait for clk_period/2;
+		clk <= '1';
+		wait for clk_period/2;
+	end process;
+
+	--Stimulus
+	stimulus: process
+		variable tmp : std_logic_vector(5 downto 0);
+	begin
+		opcode <= "000000";
+		state_in <= "0001";
+		wait until rising_edge(clk);
+		
+		wait for 10 ns;
+		assert (state_out = "0110" and AluSrcA = '0' and AluSrcB = "11" and AluOp = "00")
+			report "Not in state 1" severity failure;
+		stop(1);
+	end process;
+end architecture TB;

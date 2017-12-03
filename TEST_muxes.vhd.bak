@@ -1,0 +1,70 @@
+------------------------------------------------
+--Tests for Muxes
+------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity TB_muxes is
+end entity TB_muxes;
+
+architecture TB of TB_muxes is
+
+   component mux2_32 is
+      port(
+         s : in std_logic;
+         i0, i1 : in std_logic_vector (31 downto 0);
+         o : out std_logic_vector (31 downto 0)
+      );
+   end component mux2_32;
+
+   component mux4_32 is
+      port(
+         s : in std_logic_vector (1 downto 0);
+         i0, i1, i2, i3 : in std_logic_vector (31 downto 0);
+         o : out std_logic_vector (31 downto 0)
+      );
+   end component mux4_32;
+
+   signal O_2, O_4, I0, I1, I2, I3 : std_logic_vector (31 downto 0);
+   signal SEL4 : std_logic_vector (1 downto 0);
+   signal SEL2 : std_logic;
+
+begin
+   mux2_32_test : mux2_32 port map (SEL2, I0, I1, O_2);
+	mux4_32_test : mux4_32 port map (SEL4, I0, I1, I2, I3, O_4);
+
+   process
+   begin
+      I0 <= x"00000000";
+      I1 <= x"00000001";
+      I2 <= x"00000002";
+      I3 <= x"00000003";
+
+      SEL2 <= '0';
+      SEL4 <= "00";
+      wait for 10 ns;
+
+      assert (O_2 = x"00000000") report "Selected 0 but result differs" severity failure;
+      assert (O_4 = x"00000000") report "Selected 0 but result differs" severity failure;
+
+      SEL2 <= '1';
+      SEL4 <= "01";
+      wait for 10 ns;
+
+      assert (O_2 = x"00000001") report "Selected 1 but result differs" severity failure;
+      assert (O_4 = x"00000001") report "Selected 1 but result differs" severity failure;
+
+      SEL4 <= "10";
+      wait for 10 ns;
+
+      assert (O_4 = x"00000002") report "Selected 2 but result differs" severity failure;
+
+      SEL4 <= "11";
+      wait for 10 ns;
+
+      assert (O_4 = x"00000003") report "Selected 3 but result differs" severity failure;
+
+		wait;
+   end process;
+end TB;
