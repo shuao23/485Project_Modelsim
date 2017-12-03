@@ -21,7 +21,7 @@ architecture behav of alu32 is
          op : in std_logic_vector (1 downto 0);
          o, set, carry_out : out std_logic);
    end component alu1;
-   
+
    component or32_gate is
       port(
          i : in std_logic_vector (31 downto 0);
@@ -44,8 +44,8 @@ architecture behav of alu32 is
    end component not_gate;
 
    signal result_arr : std_logic_vector (31 downto 0);
-   signal cout_arr : std_logic_vector (30 downto 0);
-   signal set_31 : std_logic;
+   signal cout_arr : std_logic_vector (31 downto 0);
+   signal set_31, or32_result : std_logic;
 
 begin
    Alu1_32 : for i in 31 downto 0 generate
@@ -53,19 +53,30 @@ begin
       first_adder : if i = 0 generate
          alu1_x : alu1 port map (
             a(i), b(i), set_31, op(2), op(3), op(2), op(1 downto 0),
-            result_arr(i), open, open);
+            result_arr(i), open, cout_arr(i));
       end generate first_adder;
 
       last_adder : if i = 31 generate
          alu1_x : alu1 port map (
             a(i), b(i), '0', cout_arr(i - 1), op(3), op(2), op(1 downto 0),
-            result_arr(i), set_31, oflow);
+            result_arr(i), set_31, cout_arr(i));
       end generate last_adder;
 
       other_adders : if i /= 0 and i /= 31 generate
          alu1_x : alu1 port map (
             a(i), b(i), '0', cout_arr(i - 1), op(3), op(2), op(1 downto 0),
-            result_arr(i), open, open);
+            result_arr(i), open, cout_arr(i));
       end generate other_adders;
    end generate;
+
+   --zero
+   or_zero : or32_gate port map (result_arr, or32_result);
+   not_zero : not_gate port map (or32_result, zero);
+
+   --oflow
+   xor_oflow : xor_gate port map (cout_arr(31), cout_arr(30), oflow);
+
+   --result
+   o <= result_arr;
+   carry_out <= cout_arr(31);
 end architecture behav;
