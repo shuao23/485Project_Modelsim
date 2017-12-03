@@ -65,7 +65,7 @@ begin
 
    AndArr32 : for i in 31 downto 0 generate
    begin
-      and_x : and_gate port map (WRITE_IN, SEL(i), C_AR(i));
+      and_x : and_gate port map (clk, SEL(i), C_AR(i));
    end generate AndArr32;
 
    RegArr32 : for i in 31 downto 0 generate
@@ -90,7 +90,5 @@ begin
       Q_AR(20), Q_AR(21), Q_AR(22), Q_AR(23), Q_AR(24),
       Q_AR(25), Q_AR(26), Q_AR(27), Q_AR(28), Q_AR(29),
       Q_AR(30), Q_AR(31), rddat2);
-
-    WRITE_IN <= clk after 1 ns;
 
 end architecture;
