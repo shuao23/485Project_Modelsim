@@ -9,7 +9,7 @@ entity alu1 is
    port(
       a, b, less, carry_in, a_invert, b_invert : in std_logic;
       op : in std_logic_vector (1 downto 0);
-      o, set, oflow : out std_logic);
+      o, set, carry_out : out std_logic);
 end entity alu1;
 
 architecture behav of alu1 is
@@ -63,7 +63,7 @@ architecture behav of alu1 is
    end component mux4_1;
 
    signal inv_a_o, inv_b_o, mux_a_o, mux_b_o, and_o,
-      or_o, sum_o, carry_out_o : std_logic;
+      or_o, sum_o : std_logic;
 
 begin
 
@@ -75,11 +75,10 @@ begin
 
    and_alu : and_gate port map (mux_a_o, mux_b_o, and_o);
    or_alu : or_gate port map (mux_a_o, mux_b_o, or_o);
-   adder_alu : adder1 port map (a, b, carry_in, sum_o, carry_out_o);
+   adder_alu : adder1 port map (a, b, carry_in, sum_o, carry_out);
 
    mux_merge : mux4_1 port map (op, and_o, or_o, sum_o, less, o);
 
-   xor_oflow : xor_gate port map (carry_in, carry_out_o, oflow);
    set <= sum_o;
 
 end architecture behav;

@@ -63,12 +63,12 @@ begin
 
    decoder : decoder_32 port map (wrnum, SEL);
 
-   AndArr32 : for i in 0 to 31 generate
+   AndArr32 : for i in 31 downto 0 generate
    begin
       and_x : and_gate port map (WRITE_IN, SEL(i), C_AR(i));
    end generate AndArr32;
 
-   RegArr32 : for i in 0 to 31 generate
+   RegArr32 : for i in 31 downto 0 generate
    begin
       reg_x : reg32 port map (C_AR(i) ,wrdat, Q_AR(i));
    end generate RegArr32;

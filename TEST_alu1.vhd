@@ -16,21 +16,21 @@ architecture TB of TB_alu1 is
       port(
          a, b, less, carry_in, a_invert, b_invert : in std_logic;
          op : in std_logic_vector (1 downto 0);
-         o, set, oflow : out std_logic);
+         o, set, carry_out : out std_logic);
    end component alu1;
 
-   signal a, b, less, carry_in, o, set, oflow : std_logic;
+   signal a, b, less, carry_in, o, set, carry_out : std_logic;
    signal alu_op : std_logic_vector (3 downto 0);
 
 begin
    alu1_test : alu1 port map (a, b, less, carry_in,
-      alu_op(3), alu_op(2), alu_op(1 downto 0), o, set, oflow);
+      alu_op(3), alu_op(2), alu_op(1 downto 0), o, set, carry_out);
 
    tst_process : process
       type answer_arr_type is array (0 to 7) of std_logic_vector (0 to 1);
       variable answer : answer_arr_type := (
-         "00", "11", "01", "00",
-         "01", "00", "10", "01"
+         "00", "01", "01", "10",
+         "01", "10", "10", "11"
       );
    begin
       --Testing And Gate
@@ -124,7 +124,7 @@ begin
          wait for 10 ns;
 
          assert (o = answer(x)(1) and
-            set = answer(x)(1) and oflow = answer(x)(0))
+            set = answer(x)(1) and carry_out = answer(x)(0))
             report "Adder wrong output"
             severity failure;
       end loop;
