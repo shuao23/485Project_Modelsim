@@ -53,12 +53,28 @@ architecture TB of TB_muxes is
       );
    end component mux32_32;
 
+   component mux4_1 is
+      port(
+         s : in std_logic_vector (1 downto 0);
+         i0, i1, i2, i3 : in std_logic;
+         o : out std_logic
+      );
+   end component mux4_1;
+
+   component mux2_1 is
+      port(
+         s, i0, i1 : in std_logic;
+         o : out std_logic
+      );
+   end component mux2_1;
+
    --CLOCK
    constant CLK_PERIOD: time := 100 ns;
    signal CLK: std_logic := '0';
 
    type std_logic_vector_arr32 is array (0 to 31) of std_logic_vector(31 downto 0);
 
+   --32 bit mux
    signal MUX_IN_AR : std_logic_vector_arr32;
    signal SEL2 : std_logic;
    signal SEL4 : std_logic_vector (1 downto 0);
@@ -66,6 +82,9 @@ architecture TB of TB_muxes is
    signal SEL32 : std_logic_vector (4 downto 0);
    signal O_2, O_4, O_8, O_32 : std_logic_vector (31 downto 0);
 
+   --One bit mux
+   signal O1_2, O1_4 : std_logic;
+   signal MUX_IN_VECTOR : std_logic_vector (3 downto 0);
 
 begin
    mux2_32_test : mux2_32 port map (SEL2, MUX_IN_AR(0), MUX_IN_AR(1), O_2);
@@ -82,6 +101,9 @@ begin
       MUX_IN_AR(18), MUX_IN_AR(19), MUX_IN_AR(20), MUX_IN_AR(21), MUX_IN_AR(22),
       MUX_IN_AR(23), MUX_IN_AR(24), MUX_IN_AR(25), MUX_IN_AR(26), MUX_IN_AR(27),
       MUX_IN_AR(28), MUX_IN_AR(29), MUX_IN_AR(30), MUX_IN_AR(31), O_32);
+   mux2_1_test : mux2_1 port map (SEL2, MUX_IN_VECTOR(0), MUX_IN_VECTOR(1), O1_2);
+   mux4_1_test : mux4_1 port map (SEL4, MUX_IN_VECTOR(0), MUX_IN_VECTOR(1),
+      MUX_IN_VECTOR(2), MUX_IN_VECTOR(3), O1_4);
 
    clk_process : process
    begin
@@ -141,6 +163,48 @@ begin
          assert (O_32 = std_logic_vector(to_unsigned(x, 32)))
             report "Error in 32 input mux"
             severity failure;
+      end loop;
+
+      --test 1 bit 2 input mux
+      wait until CLK'event and CLK = '1';
+      MUX_IN_VECTOR(0) <= '0';
+      MUX_IN_VECTOR(1) <= '1';
+      SEL2 <= '0';
+      wait for 10 ns;
+      assert (O1_2 = '0')
+         report "Error in 1 bit, 2 input mux"
+         severity failure;
+      MUX_IN_VECTOR(0) <= '1';
+      MUX_IN_VECTOR(1) <= '0';
+      wait for 10 ns;
+      assert (O1_2 = '1')
+         report "Error in 1 bit, 2 input mux"
+         severity failure;
+      MUX_IN_VECTOR(0) <= '0';
+      MUX_IN_VECTOR(1) <= '1';
+      SEL2 <= '1';
+      wait for 10 ns;
+      assert (O1_2 = '1')
+         report "Error in 1 bit, 2 input mux"
+         severity failure;
+      MUX_IN_VECTOR(0) <= '1';
+      MUX_IN_VECTOR(1) <= '0';
+      wait for 10 ns;
+      assert (O1_2 = '0')
+         report "Error in 1 bit, 2 input mux"
+         severity failure;
+
+      --test 1 bit 4 input mux
+      for x in 0 to 3 loop
+         for k in 0 to 1 loop
+            wait until CLK'event and CLK = '1';
+            SEL4 <= std_logic_vector(to_unsigned(x, 2));
+            MUX_IN_VECTOR(x) <= std_logic(to_unsigned(k, 1)(0));
+            wait for 10 ns;
+            assert (O1_4 = std_logic(to_unsigned(k, 1)(0)))
+               report "Error in 1 bit 4 input mux"
+               severity failure;
+         end loop;
       end loop;
 
       stop(0);
