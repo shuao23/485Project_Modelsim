@@ -25,14 +25,14 @@ begin
    mem_write : process(wrln)
    begin
       if(wrln'event and wrln = '1') then
-         MEM(to_integer(unsigned(adr))) <= wrdat;
+         MEM(to_integer(unsigned(adr)) / 4) <= wrdat;
       end if;
    end process;
 
    mem_read : process(rdln)
    begin
       if(rdln'event and rdln = '1') then
-         rddat <= MEM(to_integer(unsigned(adr)));
+         rddat <= MEM(to_integer(unsigned(adr)) / 4);
       end if;
    end process;
 

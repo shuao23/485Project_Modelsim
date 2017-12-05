@@ -57,7 +57,7 @@ begin
          wait until CLK'event and CLK = '1';
          readline(test_file, line_content);
          read(line_content, content);
-         ADR <= std_logic_vector(to_unsigned(x, 32));
+         ADR <= std_logic_vector(to_unsigned(x * 4, 32));
          WRDAT <= content;
          x := x + 1;
          WRLN <= '1';
@@ -75,7 +75,7 @@ begin
          wait until CLK'event and CLK = '1';
          readline(test_file, line_content);
          read(line_content, content);
-         ADR <= std_logic_vector(to_unsigned(x, 32));
+         ADR <= std_logic_vector(to_unsigned(x * 4, 32));
          x := x + 1;
          RDLN <= '1';
          wait for 10 ns;

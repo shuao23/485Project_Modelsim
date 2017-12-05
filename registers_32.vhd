@@ -7,7 +7,7 @@ use ieee.numeric_std.all;
 
 entity registers_32 is
    port(
-      clk : in std_logic;
+      clk, reset, set : in std_logic;
       rdnum1, rdnum2, wrnum : in std_logic_vector (4 downto 0);
       wrdat : in std_logic_vector (31 downto 0);
       rddat1, rddat2 : out std_logic_vector (31 downto 0)
@@ -16,13 +16,13 @@ end entity registers_32;
 
 architecture behav of registers_32 is
 
-   component reg32 is
+   component reg32_reset is
       port(
-         clk : in std_logic;
+         clk, reset, set : in std_logic;
          D : in std_logic_vector (31 downto 0);
          Q : out std_logic_vector (31 downto 0)
       );
-   end component reg32;
+   end component reg32_reset;
 
    component and_gate is
       port(
@@ -52,29 +52,31 @@ architecture behav of registers_32 is
       );
    end component decoder_32;
 
-   type std_logic_vector_arr32 is array (0 to 31) of std_logic_vector (31 downto 0);
+   type std_logic_vector_arr32 is array (1 to 31) of std_logic_vector (31 downto 0);
 
    signal WRITE_IN : std_logic := '0';
    signal SEL : std_logic_vector (31 downto 0) := (others => '0'); --Connected from decoder
-   signal C_AR : std_logic_vector (31 downto 0):= (others => '0'); --Connected to clk of each registers
+   signal C_AR : std_logic_vector (31 downto 1):= (others => '0'); --Connected to clk of each registers
    signal Q_AR : std_logic_vector_arr32 := ((others => (others => '0')));
+
+   constant ZERO : std_logic_vector (31 downto 0) := (others => '0');
 
 begin
 
    decoder : decoder_32 port map (wrnum, SEL);
 
-   AndArr32 : for i in 31 downto 0 generate
+   AndArr32 : for i in 31 downto 1 generate
    begin
-      and_x : and_gate port map (clk, SEL(i), C_AR(i));
+      and_x : and_gate port map (set, SEL(i), C_AR(i));
    end generate AndArr32;
 
-   RegArr32 : for i in 31 downto 0 generate
+   RegArr32 : for i in 31 downto 1 generate
    begin
-      reg_x : reg32 port map (C_AR(i) ,wrdat, Q_AR(i));
+      reg_x : reg32_reset port map (clk, reset, C_AR(i), wrdat, Q_AR(i));
    end generate RegArr32;
 
    mux32_1 : mux32_32 port map (
-      rdnum1, Q_AR(0), Q_AR(1), Q_AR(2), Q_AR(3), Q_AR(4),
+      rdnum1, ZERO, Q_AR(1), Q_AR(2), Q_AR(3), Q_AR(4),
       Q_AR(5), Q_AR(6), Q_AR(7), Q_AR(8), Q_AR(9),
       Q_AR(10), Q_AR(11), Q_AR(12), Q_AR(13), Q_AR(14),
       Q_AR(15), Q_AR(16), Q_AR(17), Q_AR(18), Q_AR(19),
@@ -83,7 +85,7 @@ begin
       Q_AR(30), Q_AR(31), rddat1);
 
    mux32_2 : mux32_32 port map (
-      rdnum2, Q_AR(0), Q_AR(1), Q_AR(2), Q_AR(3), Q_AR(4),
+      rdnum2, ZERO, Q_AR(1), Q_AR(2), Q_AR(3), Q_AR(4),
       Q_AR(5), Q_AR(6), Q_AR(7), Q_AR(8), Q_AR(9),
       Q_AR(10), Q_AR(11), Q_AR(12), Q_AR(13), Q_AR(14),
       Q_AR(15), Q_AR(16), Q_AR(17), Q_AR(18), Q_AR(19),

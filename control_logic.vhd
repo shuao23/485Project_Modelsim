@@ -104,7 +104,8 @@ begin
 
 				elsif opcode = ORI then
 					state_out <= S13;
-
+				else
+					state_out <= S0;
 				end if;
 
 			when S2 =>
@@ -121,16 +122,18 @@ begin
 
 			when S3 =>
 				memRead 	<= '1';
+				lorD <= '1';
 				state_out 	<= S4;
 
 			when S4 =>
-				RegDst 	<= '1';
+				RegDst 	<= '0';
 				RegWrite <= '1';
-				MemtoReg	<= '0';
+				MemtoReg	<= '1';
 				state_out 	<= S0;
 
 			when S5 =>
 				memWrite <= '1';
+				lorD <= '1';
 				state_out 	<= S0;
 
 			when S6 =>

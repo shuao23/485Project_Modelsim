@@ -25,7 +25,7 @@ architecture TB of cpu32_testbench is
 
    component cpu32 is
       port(
-         clk, reset : in std_logic;
+         clk : in std_logic;
          mem_rddat : in std_logic_vector (31 downto 0);
          mem_wr, mem_rd : out std_logic;
          addr, mem_wrdat : out std_logic_vector (31 downto 0)
@@ -34,7 +34,7 @@ architecture TB of cpu32_testbench is
 
 
    signal mem_rddat, addr, mem_wrdat : std_logic_vector (31 downto 0) := (others => '0');
-   signal mem_wr, mem_rd, clk, reset : std_logic := '0';
+   signal mem_wr, mem_rd, clk : std_logic := '0';
 
    constant CLK_PERIOD : time := 100 ns;
    signal clock_enable : std_logic := '0';
@@ -49,7 +49,7 @@ architecture TB of cpu32_testbench is
 begin
 
    memory32_test : memory32 port map (mem_wr_bus, mem_rd_bus, memBus_a, memBus_d, mem_rddat);
-   cpu32_test : cpu32 port map (clk, reset, mem_rddat, mem_wr_cpu, mem_rd_cpu, cpuToMem_a, cpuToMem_d);
+   cpu32_test : cpu32 port map (clk, mem_rddat, mem_wr_cpu, mem_rd_cpu, cpuToMem_a, cpuToMem_d);
 
    with init select memBus_a <=
       cpuToMem_a when '0',
@@ -85,14 +85,13 @@ begin
       variable x : natural := 0;
    begin
       --Load data into memory
-      reset <= '1';
       x := 0;
       mem_wr_debug <= '0';
       file_open(mem_file, "memory.txt", read_mode);
       while not endfile(mem_file) loop
          readline(mem_file, line_content);
          read(line_content, content);
-         debugToMem_a <= std_logic_vector(to_unsigned(x * 4, 32));
+         debugToMem_a <= std_logic_vector(to_unsigned(x, 32));
          debugToMem_d <= content;
          x := x + 1;
          mem_wr_debug <= '1';
@@ -101,12 +100,10 @@ begin
          wait for 10 ns;
       end loop;
       file_close(mem_file);
-
-      --Initialize cpu and clock
       clock_enable <= '1';
-      wait for 200 ns;
       init <= '0';
-      reset <= '0';
+      debugToMem_a <= x"00000000";
+      rmem_rd_debug <= '1';
       wait;
    end process tst_process;
 

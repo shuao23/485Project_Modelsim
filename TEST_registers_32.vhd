@@ -14,7 +14,7 @@ architecture TB of TB_registers_32 is
 
    component registers_32 is
       port(
-         clk : in std_logic;
+         clk, reset, set : in std_logic;
          rdnum1, rdnum2, wrnum : in std_logic_vector (4 downto 0);
          wrdat : in std_logic_vector (31 downto 0);
          rddat1, rddat2 : out std_logic_vector (31 downto 0)
@@ -22,7 +22,7 @@ architecture TB of TB_registers_32 is
    end component registers_32;
 
    --CLOCK
-   constant CLK_PERIOD : time := 10 ns;
+   constant CLK_PERIOD : time := 100 ns;
    signal CLK : std_logic := '0';
 
    signal WRITE_CLK, WRITE_IN : std_logic := '0';
@@ -32,7 +32,7 @@ architecture TB of TB_registers_32 is
 begin
 
    registers_32_test : registers_32 port map (
-      WRITE_CLK, RDNUM_1, RDNUM_2, WRNUM, WRDAT, RDDAT_1, RDDAT_2);
+      WRITE_CLK, '0', '1', RDNUM_1, RDNUM_2, WRNUM, WRDAT, RDDAT_1, RDDAT_2);
 
    WRITE_CLK <= CLK and WRITE_IN;
 
@@ -46,22 +46,28 @@ begin
 
    process
    begin
-      --Testing read 1 output
+      --Writing to registers
+      WRITE_IN <= '1';
       for x in 0 to 31 loop
          wait until CLK'event and CLK = '1';
          wait for 10 ns;
-         WRITE_IN <= '1';
-         RDNUM_1 <= std_logic_vector(to_unsigned(x, 5));
          WRNUM <= std_logic_vector(to_unsigned(x, 5));
          WRDAT <= (
             std_logic_vector(to_unsigned(x, 8)) &
             std_logic_vector(to_unsigned(x, 8)) &
             std_logic_vector(to_unsigned(x, 8)) &
             std_logic_vector(to_unsigned(x, 8)));
+      end loop;
 
+      wait until CLK'event and CLK = '1';
+      wait for 10 ns;
+      WRITE_IN <= '0';
+
+      --Reading from 1
+      for x in 0 to 31 loop
          wait until CLK'event and CLK = '1';
+         RDNUM_1 <= std_logic_vector(to_unsigned(x, 5));
          wait for 10 ns;
-         WRITE_IN <= '0';
          assert (RDDAT_1 = std_logic_vector(to_unsigned(x, 8)) &
                            std_logic_vector(to_unsigned(x, 8)) &
                            std_logic_vector(to_unsigned(x, 8)) &
@@ -70,22 +76,11 @@ begin
             severity failure;
       end loop;
 
-      --Testing read 2 output
+      --Reading from 2
       for x in 0 to 31 loop
          wait until CLK'event and CLK = '1';
-         wait for 10 ns;
-         WRITE_IN <= '1';
          RDNUM_2 <= std_logic_vector(to_unsigned(x, 5));
-         WRNUM <= std_logic_vector(to_unsigned(x, 5));
-         WRDAT <= (
-            std_logic_vector(to_unsigned(x, 8)) &
-            std_logic_vector(to_unsigned(x, 8)) &
-            std_logic_vector(to_unsigned(x, 8)) &
-            std_logic_vector(to_unsigned(x, 8)));
-
-         wait until CLK'event and CLK = '1';
          wait for 10 ns;
-         WRITE_IN <= '0';
          assert (RDDAT_2 = std_logic_vector(to_unsigned(x, 8)) &
                            std_logic_vector(to_unsigned(x, 8)) &
                            std_logic_vector(to_unsigned(x, 8)) &
@@ -94,18 +89,33 @@ begin
             severity failure;
       end loop;
 
-      --Testing timing of write
-      wait until CLK'event and CLK = '1';
-      wait for 10 ns;
-      WRITE_IN <= '1';
-      RDNUM_1 <= "00000";
-      RDNUM_2 <= "00001";
-      WRNUM <= "00001";
-      WRDAT <= x"AAAAAAAA";
+      --testing 0 register
       wait until CLK'event and CLK = '1';
       wait for 10 ns;
       WRITE_IN <= '1';
       WRNUM <= "00000";
+      WRDAT <= x"AAAAAAAA";
+      wait until CLK'event and CLK = '1';
+      wait for 10 ns;
+      WRITE_IN <= '0';
+      RDNUM_1 <= "00000";
+      wait for 10 ns;
+      assert (RDDAT_1 = x"00000000")
+         report "Zero register"
+         severity failure;
+
+      --Testing timing of write
+      wait until CLK'event and CLK = '1';
+      wait for 10 ns;
+      WRITE_IN <= '1';
+      RDNUM_1 <= "00001";
+      RDNUM_2 <= "00010";
+      WRNUM <= "00010";
+      WRDAT <= x"AAAAAAAA";
+      wait until CLK'event and CLK = '1';
+      wait for 10 ns;
+      WRITE_IN <= '1';
+      WRNUM <= "00001";
       WRDAT <= x"55555555";
       wait until CLK'event and CLK = '1';
       wait for 10 ns;

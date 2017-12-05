@@ -71,7 +71,7 @@ begin
 				end if;
 
 			when others =>
-				report "NOT A Right INPUT in ALU Control" severity warning;
+				ALUCon <= (others => 'X');
 		end case;
 	end process;
 end behav;
